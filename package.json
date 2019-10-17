@@ -1,0 +1,41 @@
+{
+  "name": "inhabit",
+  "version": "1.0.0",
+  "description": " ",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": " chmod a+rx health/healthCheck.sh; export NODE_ENV=developer; node app.js",
+    "start-prod": " chmod a+rx health/healthCheck.sh; export NODE_ENV=production; node app.js",
+    "zip": "rm -rf ../../deployments/nava-backend && mkdir ../../deployments/nava-backend && rsync -av --progress ./ ../../deployments/nava-backend/ --exclude node_modules --exclude .git && cd ../../deployments/nava-backend && zip ../nava-backend.zip -r * .[^.]* && open . "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sammckay12/arla-be.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KompasApp/nava-cms-backend/issues"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
+    "body-parser": "^1.18.2",
+    "commander": "^2.19.0",
+    "config": "^3.1.0",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "inquirer": "^6.2.0",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.1.1",
+    "line-by-line": "^0.1.6",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.0.3",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
+    "serve-favicon": "~2.4.5",
+    "shelljs": "^0.8.2"
+  }
+}
